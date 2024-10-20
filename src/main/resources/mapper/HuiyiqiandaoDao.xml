@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuiyiqiandaoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuiyiqiandaoEntity" id="huiyiqiandaoMap">
+        <result property="huiyimingcheng" column="huiyimingcheng"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="qiandaoshuoming" column="qiandaoshuoming"/>
+        <result property="qiandaoshijian" column="qiandaoshijian"/>
+        <result property="longitude" column="longitude"/>
+        <result property="latitude" column="latitude"/>
+        <result property="fulladdress" column="fulladdress"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuiyiqiandaoVO" >
+		SELECT * FROM huiyiqiandao  huiyiqiandao         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuiyiqiandaoVO" >
+		SELECT  huiyiqiandao.* FROM huiyiqiandao  huiyiqiandao 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuiyiqiandaoView" >
+
+		SELECT  huiyiqiandao.* FROM huiyiqiandao  huiyiqiandao 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuiyiqiandaoView" >
+		SELECT * FROM huiyiqiandao  huiyiqiandao <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
